@@ -21,6 +21,9 @@ export default defineConfig(({ mode }) => ({
         inlineDynamicImports: true,
         exports: "named",
       },
+      input: {
+        main:  path.resolve(__dirname, 'index.html'),
+      }
     },
     minify: mode === "production",
   },
