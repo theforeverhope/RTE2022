@@ -16,11 +16,11 @@ export default defineConfig(({ mode }) => ({
     outDir: "dist",
     rollupOptions: {
       // external: ["@netless/fastboard", "@netless/window-manager", "white-web-sdk"],
-      output: {
-        manualChunks: undefined,
-        inlineDynamicImports: true,
-        exports: "named",
-      },
+      // output: {
+      //   manualChunks: undefined,
+      //   inlineDynamicImports: true,
+      //   exports: "named",
+      // },
       input: {
         main:  path.resolve(__dirname, 'index.html'),
       }
