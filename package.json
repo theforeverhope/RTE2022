@@ -13,6 +13,9 @@
     "start": "vite",
     "build": "vite build"
   },
+  "server": {
+    "host": true
+  },
   "engines": {
     "npm": "^8.0.0"
   },
