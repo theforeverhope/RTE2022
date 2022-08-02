@@ -79,6 +79,7 @@ function setup() {
   $themeBtn.onclick = toggleTheme.bind(null, undefined);
 
   return {
+    
     $whiteboard,
     onReset: (fn: () => void) => (onResetCallback = fn),
     onThemeChanged: (fn: (theme: Theme) => void) => (themeCallbacks.push(fn), fn(theme)),
