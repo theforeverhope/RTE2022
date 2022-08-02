@@ -80,32 +80,13 @@ function setup() {
   $themeBtn.onclick = toggleTheme.bind(null, undefined);
 
 
-  let rtc = {
-    localAudioTrack: null,
-    client: null
-};
+ 
 
-let options = {
-    // Pass your App ID here.
-    appId: "Your App ID",
-    // Set the channel name.
-    channel: "test",
-    // Pass your temp token here.
-    token: "Your temp token",
-    // Set the user ID.
-    uid: 123456
-};
-
-  const $agoraRTC = $controls.appendChild(document.createElement("button"));
-  $agoraRTC.id = "Voice";
-  $agoraRTC.title = "Voice";
-  $agoraRTC.textContent = "Voice";
-  let onVoiceCallback: (() => {
-    rtc.client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
-    
-
-  }) | undefined;
-  $resetBtn.onclick = () => onVoiceCallback&&onVoiceCallback();
+  const $agoraRTCJoin = $controls.appendChild(document.createElement("button"));
+  $agoraRTCJoin.id = "Voice";
+  $agoraRTCJoin.title = "Voice";
+  $agoraRTCJoin.textContent = "Voice";
+  function 
 
 
   return {
