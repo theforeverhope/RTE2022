@@ -2,6 +2,7 @@ import { createFastboard, mount, Theme } from "@netless/fastboard";
 import { get_uid } from "./query";
 import { registering } from "./register";
 import "./style.css";
+import AgoraRTC from "agora-rtc-sdk-ng"
 
 main().catch(console.error);
 
@@ -78,8 +79,37 @@ function setup() {
   prefersDark.addEventListener("change", toggleTheme);
   $themeBtn.onclick = toggleTheme.bind(null, undefined);
 
-  return {
+
+  let rtc = {
+    localAudioTrack: null,
+    client: null
+};
+
+let options = {
+    // Pass your App ID here.
+    appId: "Your App ID",
+    // Set the channel name.
+    channel: "test",
+    // Pass your temp token here.
+    token: "Your temp token",
+    // Set the user ID.
+    uid: 123456
+};
+
+  const $agoraRTC = $controls.appendChild(document.createElement("button"));
+  $agoraRTC.id = "Voice";
+  $agoraRTC.title = "Voice";
+  $agoraRTC.textContent = "Voice";
+  let onVoiceCallback: (() => {
+    rtc.client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
     
+
+  }) | undefined;
+  $resetBtn.onclick = () => onVoiceCallback&&onVoiceCallback();
+
+
+  return {
+
     $whiteboard,
     onReset: (fn: () => void) => (onResetCallback = fn),
     onThemeChanged: (fn: (theme: Theme) => void) => (themeCallbacks.push(fn), fn(theme)),

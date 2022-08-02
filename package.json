@@ -29,6 +29,7 @@
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
     "vite": "^2.9.10",
-    "white-web-sdk": "^2.16.24"
+    "white-web-sdk": "^2.16.24",
+    "agora-rtc-sdk-ng": "latest"
   }
 }
